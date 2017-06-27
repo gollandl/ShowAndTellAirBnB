@@ -16,7 +16,7 @@ export default class ScreenOne extends Component {
       <Screen>
         <View style={styles.container}>
           <Text style={styles.welcome}>
-            Welcome to React Native!
+            Welcome to React Native! Testing
           </Text>
           <Text style={styles.instructions}>
             Add more screen components in the screens directory
