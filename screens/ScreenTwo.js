@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Button,
+  TouchableHighlight,
 } from 'react-native';
 import Navigator from 'native-navigation';
 import { SCREENTHREE } from '../routes';
@@ -22,10 +23,11 @@ class ScreenTwo extends React.Component {
           </View>
 
           <Text style={styles.indent}>On 12 Dec 2017 at 21:08 </Text>
-          <Button
-            title="Top up History"
-            onPress={() => Navigator.push(SCREENTHREE)}
-          />
+
+          <TouchableHighlight onPress={() => Navigator.push(SCREENTHREE)} style={styles.touch2}>
+            <Text style={styles.buttonText2}>Top up History</Text>
+          </TouchableHighlight>
+
           <Text style={styles.bold}>Choose Amount</Text>
           <Text style={styles.indent}>Top up at least £5-no more than£99</Text>
 
@@ -40,10 +42,10 @@ class ScreenTwo extends React.Component {
        </View>
       <Text> On 5 November 2017 at 16:40pm </Text>
 
-      <Button
-        title="Top up"
-        onPress={() => Navigator.push(SCREENFOUR)}
-      />
+      <TouchableHighlight onPress={() => Navigator.push(SCREENFOUR)} style={styles.touch}>
+        <Text style={styles.buttonText}>Top up</Text>
+      </TouchableHighlight>
+
         </View>
     );
   }
@@ -117,6 +119,36 @@ price:{
   fontSize:25,
   marginLeft:80,
 },
+touch:{
+  height:50,
+  width:350,
+  backgroundColor:'green',
+  justifyContent:'center',
+  marginTop:20,
+},
+buttonText:{
+  flex:1,
+  color:'white',
+  fontSize:30,
+  fontWeight:"600",
+  alignSelf:'center',
+},
+touch2:{
+  height:30,
+  width:200,
+  backgroundColor:'grey',
+  justifyContent:'center',
+  alignSelf:'flex-start',
+  marginTop:20,
+},
+buttonText2:{
+  flex:1,
+  color:'white',
+  fontSize:18,
+  fontWeight:"600",
+  alignSelf:'center',
+},
+
 
 
 });

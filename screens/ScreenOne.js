@@ -7,6 +7,7 @@ import {
   Button,
   Image,
   TextInput,
+  TouchableHighlight,
 } from 'react-native';
 import Navigator, { TabBar, Tab } from 'native-navigation';
 import Screen from '../components/Screen';
@@ -25,10 +26,12 @@ export default class ScreenOne extends Component {
           <Text>Please login</Text>
           <TextInput style={styles.textInput} placeholder={'Username'} placeholderTextColor={"rgba(198,204,1)"}/>
           <TextInput style={styles.textInput} placeholder={'Password'} placeholderTextColor={"rgba(198,204,1)"}secureTextEntry ref={(input) => this.passwordInput = input}/>
-          <Button
-            title="Log in"
-            onPress={() => Navigator.push(SCREENTWO)}
-          />
+
+          <TouchableHighlight onPress={() => Navigator.push(SCREENTWO)} style={styles.touch}>
+            <Text style={styles.buttonText}>Login</Text>
+          </TouchableHighlight>
+
+
         </View>
       </Screen>
     );
@@ -75,6 +78,24 @@ pic: {
     marginLeft:10,
     marginTop:100,
   },
+
+  touch:{
+    height:30,
+    width:200,
+    backgroundColor:'green',
+    justifyContent:'center',
+    marginTop:20,
+  },
+  buttonText:{
+    flex:1,
+    color:'white',
+    fontSize:15,
+    fontWeight:"600",
+    alignSelf:'center',
+  },
+
+
+
 
 
 });

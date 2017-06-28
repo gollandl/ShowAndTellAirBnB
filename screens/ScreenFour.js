@@ -6,6 +6,7 @@ import {
   View,
   Button,
   Image,
+  TouchableHighlight,
 } from 'react-native';
 import Navigator from 'native-navigation';
 import { SCREENONE } from '../routes';
@@ -19,9 +20,11 @@ class ScreenFour extends  React.Component {
           <Image style ={styles.pic} source={require('../images/flame.png')}/>
 
           <Text style={styles.thank}>Thank you for your purchase</Text>
-      <Button
-        title="Log out"
-        onPress={() => Navigator.push(SCREENONE)}/>
+
+        <TouchableHighlight onPress={() => Navigator.push(SCREENONE)} style={styles.touch}>
+          <Text style={styles.buttonText}>Log out</Text>
+        </TouchableHighlight>
+
         </View>
     );
   }
@@ -109,6 +112,22 @@ pic:{
   height:220,
   width:220,
 },
+
+touch:{
+  height:40,
+  width:350,
+  backgroundColor:'green',
+  justifyContent:'center',
+},
+buttonText:{
+  flex:1,
+  color:'white',
+  fontSize:25,
+  fontWeight:"600",
+  alignSelf:'center',
+},
+
+
 
 });
 export default ScreenFour;

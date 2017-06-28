@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Button,
+  TouchableHighlight,
 } from 'react-native';
 import Navigator from 'native-navigation';
 import { SCREENFOUR } from '../routes';
@@ -26,10 +27,9 @@ import Screen from '../components/Screen';
           <Text style={styles.transactions}>03 Apl   2017                    £25.99</Text>
           <Text style={styles.transactions}>28 Apl   2017                    £17.56</Text>
         </View>
-          <Button
-            title="Top Up"
-            onPress={() => Navigator.push(SCREENTWO)}
-          />
+        <TouchableHighlight onPress={() => Navigator.push(SCREENTWO)} style={styles.touch}>
+          <Text style={styles.buttonText}>Top up</Text>
+        </TouchableHighlight>
 
         </View>
     );
@@ -89,6 +89,7 @@ list:{
   marginLeft:30,
   fontSize:20,
   color:'navy',
+  alignSelf:'flex-start',
 
 },
 
@@ -101,6 +102,22 @@ transactions:{
 subheading:{
   fontSize:15,
   marginBottom:10,
+  marginLeft:30,
+  alignSelf:'flex-start',
+},
+touch:{
+  height:30,
+  width:200,
+  backgroundColor:'green',
+  justifyContent:'center',
+  marginTop:20,
+},
+buttonText:{
+  flex:1,
+  color:'white',
+  fontSize:15,
+  fontWeight:"600",
+  alignSelf:'center',
 },
 
 
