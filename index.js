@@ -1,5 +1,5 @@
 import Navigator from 'native-navigation';
-import { SCREENONE, SCREENTWO } from './routes';
+import { SCREENONE, SCREENTWO, SCREENTHREE, SCREENFOUR } from './routes';
 
 
 Navigator.registerScreen(
@@ -7,7 +7,7 @@ Navigator.registerScreen(
   () => require('./screens/ScreenOne'),
   {
     initialConfig: {
-      title: 'Screen One',
+      title: 'British Gas',
     },
   }
 );
@@ -17,7 +17,28 @@ Navigator.registerScreen(
   () => require('./screens/ScreenTwo'),
   {
     initialConfig: {
-      title: 'Screen Two',
+      title: 'Top up',
+    },
+  }
+);
+
+
+Navigator.registerScreen(
+  SCREENTHREE,
+  () => require('./screens/ScreenThree'),
+  {
+    initialConfig: {
+      title: 'Top up History',
+    },
+  }
+);
+
+Navigator.registerScreen(
+  SCREENFOUR,
+  () => require('./screens/ScreenFour'),
+  {
+    initialConfig: {
+      title: 'Confirmation',
     },
   }
 );

@@ -7,43 +7,18 @@ import {
   Button,
 } from 'react-native';
 import Navigator from 'native-navigation';
-import { SCREENTHREE } from '../routes';
-import {SCREENFOUR} from '../routes';
+import { SCREENONE } from '../routes';
 import Screen from '../components/Screen';
 
-class ScreenTwo extends React.Component {
+class ScreenFour extends  React.Component {
   render() {
     return (
         <View style={styles.container}>
           <Text style={styles.text}>Smart Card number:12345678912345678</Text>
-          <View style={styles.balence}>
-            <Text style={styles.bold}>Balence</Text>
-            <Text style={styles.cost}>£36.00</Text>
-          </View>
-
-          <Text style={styles.indent}>On 12 Dec 2017 at 21:08 </Text>
-          <Button
-            title="Top up History"
-            onPress={() => Navigator.push(SCREENTHREE)}
-          />
-          <Text style={styles.bold}>Choose Amount</Text>
-          <Text style={styles.indent}>Top up at least £5-no more than£99</Text>
-
-          <View style={styles.balence}>
-            <Text style={styles.pound}>£</Text>
-            <Text style={styles.amount}>05.00</Text>
-          </View>
-
-        <View style={styles.balence}>
-          <Text> You last topped up: </Text>
-          <Text style={styles.price}> £50 </Text>
-       </View>
-      <Text> On 5 November 2017 at 16:40pm </Text>
-
+          <Text style={styles.thank}>Thank you for your purchase</Text>
       <Button
-        title="Top up"
-        onPress={() => Navigator.push(SCREENFOUR)}
-      />
+        title="Log out"
+        onPress={() => Navigator.push(SCREENONE)}/>
         </View>
     );
   }
@@ -117,7 +92,15 @@ price:{
   fontSize:25,
   marginLeft:80,
 },
-
+thank:{
+  marginTop:70,
+  marginBottom:40,
+  fontSize:40,
+  color:'navy',
+  justifyContent:'center',
+  textAlign:'center',
+  alignItems:'center',
+},
 
 });
-export default ScreenTwo;
+export default ScreenFour;
