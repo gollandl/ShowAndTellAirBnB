@@ -20,11 +20,6 @@ export default class ScreenOne extends Component {
       <Screen>
         <View style={styles.container}>
 
-
-          <Text style={styles.welcome}>
-            Screen One
-          </Text>
-
           <Image style ={styles.pic} source={require('../images/bg.png')}/>
 
           <Text>Please login</Text>
@@ -78,6 +73,7 @@ pic: {
     flexBasis:'27%',
     marginBottom:50,
     marginLeft:10,
+    marginTop:100,
   },
 
 

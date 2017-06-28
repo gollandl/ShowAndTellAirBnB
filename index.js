@@ -1,4 +1,6 @@
+import Recat from 'react';
 import Navigator from 'native-navigation';
+
 import { SCREENONE, SCREENTWO, SCREENTHREE, SCREENFOUR } from './routes';
 
 

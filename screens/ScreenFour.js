@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Button,
+  Image,
 } from 'react-native';
 import Navigator from 'native-navigation';
 import { SCREENONE } from '../routes';
@@ -15,6 +16,8 @@ class ScreenFour extends  React.Component {
     return (
         <View style={styles.container}>
           <Text style={styles.text}>Smart Card number:12345678912345678</Text>
+          <Image style ={styles.pic} source={require('../images/flame.png')}/>
+
           <Text style={styles.thank}>Thank you for your purchase</Text>
       <Button
         title="Log out"
@@ -100,6 +103,11 @@ thank:{
   justifyContent:'center',
   textAlign:'center',
   alignItems:'center',
+},
+
+pic:{
+  height:220,
+  width:220,
 },
 
 });
