@@ -6,10 +6,9 @@ import {
   View,
   Button,
 } from 'react-native';
-import Navigator, { TabBar, Tab } from 'native-navigation';
+import Navigator from 'native-navigation';
 import Screen from '../components/Screen';
-import { SCREENTWO } from '../routes';
-
+import { SCREENONE } from '../routes';
 
 export default class ScreenOne extends Component {
   render() {
@@ -17,11 +16,23 @@ export default class ScreenOne extends Component {
       <Screen>
         <View style={styles.container}>
           <Text style={styles.welcome}>
-            Screen One
+            Login Screen
           </Text>
           <Button
             title="Push"
-            onPress={() => Navigator.push(SCREENTWO)}
+            onPress={() => Navigator.push(SCREENONE)}
+          />
+          <Button
+            title="Present"
+            onPress={() => Navigator.present(SCREENONE)}
+          />
+          <Button
+            title="Pop"
+            onPress={() => Navigator.pop()}
+          />
+          <Button
+            title="Dismiss"
+            onPress={() => Navigator.dismiss()}
           />
         </View>
       </Screen>

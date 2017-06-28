@@ -6,25 +6,16 @@ import {
   View,
   Button,
 } from 'react-native';
-import Navigator, { TabBar, Tab } from 'native-navigation';
-import Screen from '../components/Screen';
-import { SCREENTWO } from '../routes';
+import Navigator from 'native-navigation';
 
-
-export default class ScreenOne extends Component {
+export default class ScreenTwo extends Component {
   render() {
     return (
-      <Screen>
         <View style={styles.container}>
           <Text style={styles.welcome}>
-            Screen One
+            Screen Two
           </Text>
-          <Button
-            title="Push"
-            onPress={() => Navigator.push(SCREENTWO)}
-          />
         </View>
-      </Screen>
     );
   }
 }
