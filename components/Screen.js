@@ -1,24 +1,13 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
-  ScrollView,
+  View,
+  StyleSheet
 } from 'react-native';
 
 import Navigator from 'native-navigation';
+import TabBar from './TabBar';
 
-const propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
-  onPress: PropTypes.func,
-};
-
-const defaultProps = {
-};
-
-const contextTypes = {
-  nativeNavigationInstanceId: PropTypes.string,
-};
-
-export default class Screen extends React.Component {
+export default class Screen extends Component {
   render() {
     const {
       children,
@@ -26,25 +15,20 @@ export default class Screen extends React.Component {
     } = this.props;
 
     return (
-      <Navigator.Config
-        title={title}
-        backgroundColor="#f7f7f7"
-        elevation={4}
-        onBackPress={() => console.log('onBackPress')}
-        onLeftPress={() => console.log('onLeftPress')}
-        onRightPress={(x) => console.log('onRightPress', x)}
-        onAppear={() => console.log('onAppear', this.context.nativeNavigationInstanceId)}
-        onDisappear={() => console.log('onDisappear', this.context.nativeNavigationInstanceId)}
-      >
-        <ScrollView>
-          <Navigator.Spacer animated />
+      <Navigator.Config title={title}>
+        <View style={styles.container}>
           {children}
-        </ScrollView>
+          <TabBar />
+        </View>
       </Navigator.Config>
     );
   }
 }
 
-Screen.defaultProps = defaultProps;
-Screen.propTypes = propTypes;
-Screen.contextTypes = contextTypes;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+});
